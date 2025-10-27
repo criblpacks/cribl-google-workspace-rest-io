@@ -81,7 +81,7 @@ google_workspace_reports_admin:
         - name: pageToken
           value: "`${__e['nextPageToken'] === null ? null : __e['nextPageToken']}`"
       subject: user@acmecorp.com
-      serviceAccountCredentials: changeme
+      serviceAccountCredentials: "ENTER_SERVICE_ACCOUNT_JSON_KEY"
     destructive: false
     encoding: utf8
     type: rest
@@ -183,7 +183,7 @@ google_workspace_reports_login:
         - name: pageToken
           value: "`${__e['nextPageToken'] === null ? null : __e['nextPageToken']}`"
       subject: user@acmecorp.com
-      serviceAccountCredentials: changeme
+      serviceAccountCredentials: "ENTER_SERVICE_ACCOUNT_JSON_KEY"
     destructive: false
     encoding: utf8
     type: rest
@@ -285,7 +285,7 @@ google_workspace_reports_token:
         - name: pageToken
           value: "`${__e['nextPageToken'] === null ? null : __e['nextPageToken']}`"
       subject: user@acmecorp.com
-      serviceAccountCredentials: changeme
+      serviceAccountCredentials: "ENTER_SERVICE_ACCOUNT_JSON_KEY"
     destructive: false
     encoding: utf8
     type: rest
@@ -387,7 +387,7 @@ google_workspace_reports_drive:
         - name: pageToken
           value: "`${__e['nextPageToken'] === null ? null : __e['nextPageToken']}`"
       subject: user@acmecorp.com
-      serviceAccountCredentials: changeme
+      serviceAccountCredentials: "ENTER_SERVICE_ACCOUNT_JSON_KEY"
     destructive: false
     encoding: utf8
     type: rest
@@ -489,7 +489,7 @@ google_workspace_reports_gcp:
         - name: pageToken
           value: "`${__e['nextPageToken'] === null ? null : __e['nextPageToken']}`"
       subject: user@acmecorp.com
-      serviceAccountCredentials: changeme
+      serviceAccountCredentials: "ENTER_SERVICE_ACCOUNT_JSON_KEY"
     destructive: false
     encoding: utf8
     type: rest
@@ -590,7 +590,7 @@ google_workspace_reports_rules:
         - name: pageToken
           value: "`${__e['nextPageToken'] === null ? null : __e['nextPageToken']}`"
       subject: user@acmecorp.com
-      serviceAccountCredentials: changeme
+      serviceAccountCredentials: "ENTER_SERVICE_ACCOUNT_JSON_KEY"
     destructive: false
     encoding: utf8
     type: rest
@@ -691,7 +691,7 @@ google_workspace_reports_devices:
         - name: pageToken
           value: "`${__e['nextPageToken'] === null ? null : __e['nextPageToken']}`"
       subject: user@acmecorp.com
-      serviceAccountCredentials: changeme
+      serviceAccountCredentials: "ENTER_SERVICE_ACCOUNT_JSON_KEY"
     destructive: false
     encoding: utf8
     type: rest
@@ -793,7 +793,7 @@ google_workspace_reports_gemini_in_workspace_apps:
         - name: pageToken
           value: "`${__e['nextPageToken'] === null ? null : __e['nextPageToken']}`"
       subject: user@acmecorp.com
-      serviceAccountCredentials: changeme
+      serviceAccountCredentials: "ENTER_SERVICE_ACCOUNT_JSON_KEY"
     destructive: false
     encoding: utf8
     type: rest
@@ -895,7 +895,7 @@ google_workspace_reports_chrome:
         - name: pageToken
           value: "`${__e['nextPageToken'] === null ? null : __e['nextPageToken']}`"
       subject: user@acmecorp.com
-      serviceAccountCredentials: changeme
+      serviceAccountCredentials: "ENTER_SERVICE_ACCOUNT_JSON_KEY"
     destructive: false
     encoding: utf8
     type: rest
@@ -998,7 +998,7 @@ google_workspace_reports_saml:
         - name: pageToken
           value: "`${__e['nextPageToken'] === null ? null : __e['nextPageToken']}`"
       subject: user@acmecorp.com
-      serviceAccountCredentials: changeme
+      serviceAccountCredentials: "ENTER_SERVICE_ACCOUNT_JSON_KEY"
     destructive: false
     encoding: utf8
     type: rest
@@ -1100,7 +1100,7 @@ google_workspace_reports_chat:
         - name: pageToken
           value: "`${__e['nextPageToken'] === null ? null : __e['nextPageToken']}`"
       subject: user@acmecorp.com
-      serviceAccountCredentials: changeme
+      serviceAccountCredentials: "ENTER_SERVICE_ACCOUNT_JSON_KEY"
     destructive: false
     encoding: utf8
     type: rest
@@ -1202,7 +1202,7 @@ google_workspace_reports_access_transparency:
         - name: pageToken
           value: "`${__e['nextPageToken'] === null ? null : __e['nextPageToken']}`"
       subject: user@acmecorp.com
-      serviceAccountCredentials: changeme
+      serviceAccountCredentials: "ENTER_SERVICE_ACCOUNT_JSON_KEY"
     destructive: false
     encoding: utf8
     type: rest
@@ -1304,7 +1304,7 @@ google_workspace_reports_context_aware_access:
         - name: pageToken
           value: "`${__e['nextPageToken'] === null ? null : __e['nextPageToken']}`"
       subject: user@acmecorp.com
-      serviceAccountCredentials: changeme
+      serviceAccountCredentials: "ENTER_SERVICE_ACCOUNT_JSON_KEY"
     destructive: false
     encoding: utf8
     type: rest
@@ -1406,7 +1406,7 @@ google_workspace_reports_calendar:
         - name: pageToken
           value: "`${__e['nextPageToken'] === null ? null : __e['nextPageToken']}`"
       subject: user@acmecorp.com
-      serviceAccountCredentials: changeme
+      serviceAccountCredentials: "ENTER_SERVICE_ACCOUNT_JSON_KEY"
     destructive: false
     encoding: utf8
     type: rest
@@ -1508,7 +1508,7 @@ google_workspace_reports_groups_enterprise:
         - name: pageToken
           value: "`${__e['nextPageToken'] === null ? null : __e['nextPageToken']}`"
       subject: user@acmecorp.com
-      serviceAccountCredentials: changeme
+      serviceAccountCredentials: "ENTER_SERVICE_ACCOUNT_JSON_KEY"
     destructive: false
     encoding: utf8
     type: rest
@@ -1610,7 +1610,7 @@ google_workspace_reports_data_studio:
         - name: pageToken
           value: "`${__e['nextPageToken'] === null ? null : __e['nextPageToken']}`"
       subject: user@acmecorp.com
-      serviceAccountCredentials: changeme
+      serviceAccountCredentials: "ENTER_SERVICE_ACCOUNT_JSON_KEY"
     destructive: false
     encoding: utf8
     type: rest
@@ -1709,7 +1709,7 @@ google_workspace_alerts:
         - name: pageToken
           value: "`${__e['nextPageToken'] === null ? null : __e['nextPageToken']}`"
       subject: user@acmecorp.com
-      serviceAccountCredentials: changeme
+      serviceAccountCredentials: "ENTER_SERVICE_ACCOUNT_JSON_KEY"
     destructive: false
     encoding: utf8
     type: rest

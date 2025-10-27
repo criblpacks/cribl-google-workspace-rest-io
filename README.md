@@ -3,13 +3,11 @@ Cribl Google Workspace Rest Collector
 
 ## About this Pack
 
-This Pack is designed to collect, process, and output Google Workspace log data via the Google Workspace REST API.
+This pack is built as a complete SOURCE + DESTINATION solution (identified by the IO suffix). Data collection and delivery happen entirely within the pack's context, eliminating the need to connect it to globally defined Sources and Destinations. 
 
-The Pack includes Splunk output processing that maps data to Splunk sourcetypes compatible with the [Splunk Add-on for Google Workspace](https://splunkbase.splunk.com/app/5556). 
+This Pack is designed to collect, process, and output Google Workspace log data via the Google Workspace REST API. It collects security and audit logs from Google Workspace (formerly G Suite) for threat detection, compliance monitoring, and user activity tracking.
 
-This Pack collects security and audit logs from Google Workspace (formerly G Suite) for threat detection, compliance monitoring, and user activity tracking.
-
-The Pack maps Google Workspace data to the following sourcetypes by default set in each collector:
+The Pack includes optional Splunk output processing that maps data to Splunk sourcetypes compatible with the [Splunk Add-on for Google Workspace](https://splunkbase.splunk.com/app/5556).  By default, it maps Google Workspace data to the following sourcetypes (set dirextly in each Collector):
 
 ### Reports API Sourcetypes
 - Admin console activity logs: `sourcetype=gws:reports:admin`
@@ -32,15 +30,20 @@ The Pack maps Google Workspace data to the following sourcetypes by default set 
 
 ## Deployment
 
-After installing the Pack, you must perform the following:
+* This pack is configured by default to use the Worker Group's *Default Destination*.
+* To use the *Default Destination*: No changes are required. The pack will route the data to the destination currently set as the Default on the Worker Group.
+* To use a different Destination: You must update the pack's routes to specify your desired Destination.
+* For immediate functionality without requiring Pack route filter expression modifications, every bundled Source within this pack adds a hidden field: `__packsource`. This field allows for seamless routing based on the Pack source.
 
-### Create a new project in your Google Cloud Platform deployment.
+### Configure the Collectors
+
+#### Create a new project in your Google Cloud Platform deployment.
 * Navigate to `https://console.cloud.google.com/projectcreate`. A Google Cloud project is required to use Google Workspace APIs. 
 * In the Project Name field, enter a descriptive name for your project.
 * The project ID can't be changed after the project is created, so choose an ID that meets your needs for the lifetime of the project.
 * Click Create. The Google Cloud console navigates to the Dashboard page and your project is created within a few minutes.
 
-### Create a Google Cloud Service account in the Google Developers Console.
+#### Create a Google Cloud Service account in the Google Developers Console.
 * From within your newly created project, navigate to APIs and **Services > Library**.
 * Search for the Admin SDK API. Select the Admin SDK API.
 * In Admin SDK API, select the Enable button to enable the Admin SDK API. Making calls to this API lets you view and manage resources such as users, groups, and audit or usage reports within your domain.
@@ -74,15 +77,16 @@ After installing the Pack, you must perform the following:
     * ***https://www.googleapis.com/auth/apps.alerts*** 
 * Select Authorize.
 
-### Update and Enable the Collectors
+#### Update and Schedule the Collectors
 * Update the **Service account credentials** with the JSON key obtained from the above steps.
 * Update the **Impersonated account's email address** with the email address used to create the Service account. Note: This is NOT the email of the Service account. It needs to have Owner permissions.
+* Schedule the Collectors. By default, they run every 5 minutes - adjust as needed.
 
-### Outputs
+### Configure your Destination/Update Pack Routes
+To ensure proper data routing, you must make a choice: retain the current setting to use the Default Destination defined by your Worker Group, or define a new Destination directly inside this pack and adjust the pack's route accordingly.
 
-### Update and Validate the Splunk Destination
-
-* To send data to Splunk, configure and enable either the `Splunk Load Balanced` or `Splunk HEC` output. After enabling the output, update the `cribl_gws_events_all` route and add Splunk as the destination.
+### Commit and Deploy
+Once everything is configured, perform a Commit & Deploy to enable data collection.
 
 ## Pack Configurable Items 
 The following are the in-Pack configurable items - review/update them as needed. 
@@ -105,10 +109,7 @@ The Pack has the following variables:
 
 ## Upgrades
 
-Including upgrade instructions for Packs that have user-modified items (such as Pipelines, Functions, and lookups) will prevent frustration. This section is optional for initial releases and for Packs that are not generally modified.
-
 Upgrading certain Cribl Packs using the same Pack ID can have unintended consequences. See [Upgrading an Existing Pack](https://docs.cribl.io/stream/packs#upgrading) for details.
-
 ## Release Notes
 
 ### Version 1.0.0
