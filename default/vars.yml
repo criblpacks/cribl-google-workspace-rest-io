@@ -1,0 +1,13 @@
+default_splunk_index:
+  type: any
+  lib: custom
+  value: "'gws'"
+  description: This is the index Cribl will forward GWS data to
+  tags: google
+default_splunk_sourcetype:
+  type: any
+  lib: custom
+  description: This is the default Splunk sourcetype if none is set in the
+    Collector configuration
+  value: "'gws:events'"
+  tags: google

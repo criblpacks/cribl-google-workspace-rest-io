@@ -1,0 +1,74 @@
+output: default
+streamtags: []
+groups:
+  OgDHqy:
+    name: 1. Drop, Sample, Suppress
+    description: Drop, sample or suppress events based on event_actions set in
+      gws_events.csv lookup. To modify please click Knowledge > Lookups >
+      gws_events.csv inside the pack.
+    index: 3
+    disabled: true
+  rA3Bo0:
+    name: Remove duplicate fields
+    index: 4
+    description: Removes duplicate fields from event
+    disabled: true
+asyncFuncTimeout: 1000
+functions:
+  - id: comment
+    filter: "true"
+    disabled: null
+    conf:
+      comment: This conditioning pipeline is for use on the Google Workspace Events
+        API endpoint. This pipeline will provide optional reduction functions
+        available.
+  - id: comment
+    filter: "true"
+    disabled: null
+    conf:
+      comment: For additional details, see this pack's README under Settings.
+  - id: comment
+    filter: "true"
+    disabled: null
+    conf:
+      comment: "Author: Cribl Packs Team"
+  - id: drop
+    filter: __event_action == 'drop'
+    disabled: true
+    conf: {}
+    groupId: OgDHqy
+    description: Drop events based on event action specified in gws_events.csv
+  - id: sampling
+    filter: __event_action == 'sample'
+    disabled: true
+    conf:
+      rules:
+        - filter: "true"
+          rate: 10
+    groupId: OgDHqy
+    description: Sample events based on event action specified in gws_events.csv.
+      Default value is 1:10 ratio, but can be configured otherwise.
+  - id: suppress
+    filter: __event_action == 'suppress'
+    disabled: true
+    conf:
+      allow: 1
+      suppressPeriodSec: 30
+      dropEventsMode: true
+      maxCacheSize: 50000
+      cacheIdleTimeoutPeriods: 2
+      numEventsIdleTimeoutTrigger: 10000
+      keyExpr: "`${action}:${object_type}`"
+    groupId: OgDHqy
+    description: Suppress events based on event action specified in gws_events.csv
+  - id: eval
+    filter: "true"
+    disabled: true
+    conf:
+      add: []
+      remove:
+        - actor_details.uuid
+        - session.uuid
+        - aux_details.uuid
+    groupId: rA3Bo0
+description: Pipeline for applying reductions to Google Workspace events.
