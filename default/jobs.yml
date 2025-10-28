@@ -516,6 +516,7 @@ google_workspace_reports_gcp:
       - name: __packsource
         value: "'cribl-google-workspace-rest-io.reports_gcp'"
   savedState: {}
+  description: GCP resource sharing and account-link events
   notifications: []
 google_workspace_reports_rules:
   type: collection
@@ -619,6 +620,7 @@ google_workspace_reports_rules:
       - name: __packsource
         value: "'cribl-google-workspace-rest-io.reports_rules'"
   savedState: {}
+  descroption: Custom rules triggered in Workspace
   notifications: []
 google_workspace_reports_devices:
   type: collection
@@ -722,7 +724,7 @@ google_workspace_reports_devices:
       - name: __packsource
         value: "'cribl-google-workspace-rest-io.reports_devices'"
   savedState: {}
-  description: Retrieve device audit events for a domain
+  description: Device management actions
   notifications: []
 google_workspace_reports_gemini_in_workspace_apps:
   type: collection
@@ -826,7 +828,7 @@ google_workspace_reports_gemini_in_workspace_apps:
       - name: __packsource
         value: "'cribl-google-workspace-rest-io.reports_gemini_apps'"
   savedState: {}
-  description: Retrieve device audit events for a domain
+  description: Gemini activity inside Workspace apps (Docs, Sheets, Gmail, Slides etc.)
   notifications: []
 google_workspace_reports_chrome:
   type: collection
@@ -931,7 +933,7 @@ google_workspace_reports_chrome:
       - name: __packsource
         value: "'cribl-google-workspace-rest-io.reports_chrome'"
   savedState: {}
-  description: Retrieve device audit events for a domain
+  description: Chrome browser / policy events
   notifications: []
 google_workspace_reports_saml:
   type: collection
@@ -1035,7 +1037,7 @@ google_workspace_reports_saml:
       - name: __packsource
         value: "'cribl-google-workspace-rest-io.reports_saml'"
   savedState: {}
-  description: Retrieve device audit events for a domain
+  description: SAML SSO login events
   notifications: []
 google_workspace_reports_chat:
   type: collection
@@ -1139,7 +1141,7 @@ google_workspace_reports_chat:
       - name: __packsource
         value: "'cribl-google-workspace-rest-io.reports_chat'"
   savedState: {}
-  description: Retrieve device audit events for a domain
+  description: Google Chat usage and room activity
   notifications: []
 google_workspace_reports_access_transparency:
   type: collection
@@ -1243,7 +1245,7 @@ google_workspace_reports_access_transparency:
       - name: __packsource
         value: "'cribl-google-workspace-rest-io.reports_access_transparency'"
   savedState: {}
-  description: Retrieve device audit events for a domain
+  description: Access Transparency records
   notifications: []
 google_workspace_reports_context_aware_access:
   type: collection
@@ -1347,7 +1349,7 @@ google_workspace_reports_context_aware_access:
       - name: __packsource
         value: "'cribl-google-workspace-rest-io.reports_context_aware_access'"
   savedState: {}
-  description: Retrieve device audit events for a domain
+  description: Context-Aware Access decisions
   notifications: []
 google_workspace_reports_calendar:
   type: collection
@@ -1451,7 +1453,7 @@ google_workspace_reports_calendar:
       - name: __packsource
         value: "'cribl-google-workspace-rest-io.reports_calendar'"
   savedState: {}
-  description: Retrieve device audit events for a domain
+  description: Calendar resource and event access logs
   notifications: []
 google_workspace_reports_groups_enterprise:
   type: collection
@@ -1555,7 +1557,7 @@ google_workspace_reports_groups_enterprise:
       - name: __packsource
         value: "'cribl-google-workspace-rest-io.reports_groups_enterprise'"
   savedState: {}
-  description: Retrieve device audit events for a domain
+  description: Google Groups for Business operations
   notifications: []
 google_workspace_reports_data_studio:
   type: collection
@@ -1659,7 +1661,7 @@ google_workspace_reports_data_studio:
       - name: __packsource
         value: "'cribl-google-workspace-rest-io.reports_data_studio'"
   savedState: {}
-  description: Retrieve device audit events for a domain
+  description: Looker Studio (Data Studio) activity
   notifications: []
 google_workspace_alerts:
   type: collection
@@ -1760,5 +1762,5 @@ google_workspace_alerts:
       - name: __packsource
         value: "'cribl-google-workspace-rest-io.gws_alerts'"
   savedState: {}
-  description: Retrieve device audit events for a domain
+  description: Workspace Alert Center events
   notifications: []
