@@ -97,6 +97,8 @@ google_workspace_reports_admin:
     metadata:
       - name: sourcetype
         value: "'gws:reports:admin'"
+      - name: __packsource
+        value: "'cribl-google-workspace-rest-io.reports_admin'"
   savedState: {}
   notifications: []
   description: Retrieve all administrative activities
@@ -199,6 +201,8 @@ google_workspace_reports_login:
     metadata:
       - value: "'gws:reports:login'"
         name: sourcetype
+      - name: __packsource
+        value: "'cribl-google-workspace-rest-io.reports_login'"
   savedState: {}
   description: Retrieve Google Workspace login events for a domain
   notifications: []
@@ -301,6 +305,8 @@ google_workspace_reports_token:
     metadata:
       - value: "'gws:reports:token'"
         name: sourcetype
+      - name: __packsource
+        value: "'cribl-google-workspace-rest-io.reports_token'"
   savedState: {}
   description: Retrieve all authorization token events for a domain
   notifications: []
@@ -403,6 +409,8 @@ google_workspace_reports_drive:
     metadata:
       - value: "'gws:reports:drive'"
         name: sourcetype
+      - name: __packsource
+        value: "'cribl-google-workspace-rest-io.reports_drive'"
   savedState: {}
   description: Retrieve Google Drive events for a domain
   notifications: []
@@ -505,6 +513,8 @@ google_workspace_reports_gcp:
     metadata:
       - value: "'gws:reports:gcp'"
         name: sourcetype
+      - name: __packsource
+        value: "'cribl-google-workspace-rest-io.reports_gcp'"
   savedState: {}
   notifications: []
 google_workspace_reports_rules:
@@ -606,6 +616,8 @@ google_workspace_reports_rules:
     metadata:
       - value: "'gws:reports:rules'"
         name: sourcetype
+      - name: __packsource
+        value: "'cribl-google-workspace-rest-io.reports_rules'"
   savedState: {}
   notifications: []
 google_workspace_reports_devices:
@@ -707,6 +719,8 @@ google_workspace_reports_devices:
     metadata:
       - value: "'gws:reports:mobile'"
         name: sourcetype
+      - name: __packsource
+        value: "'cribl-google-workspace-rest-io.reports_devices'"
   savedState: {}
   description: Retrieve device audit events for a domain
   notifications: []
@@ -809,6 +823,8 @@ google_workspace_reports_gemini_in_workspace_apps:
     metadata:
       - value: "'gws:reports:gemini_in_workspace_apps'"
         name: sourcetype
+      - name: __packsource
+        value: "'cribl-google-workspace-rest-io.reports_gemini_apps'"
   savedState: {}
   description: Retrieve device audit events for a domain
   notifications: []
@@ -912,6 +928,8 @@ google_workspace_reports_chrome:
       - value: |
           'gws:reports:chrome'
         name: sourcetype
+      - name: __packsource
+        value: "'cribl-google-workspace-rest-io.reports_chrome'"
   savedState: {}
   description: Retrieve device audit events for a domain
   notifications: []
@@ -1014,6 +1032,8 @@ google_workspace_reports_saml:
     metadata:
       - value: "'gws:reports:saml'"
         name: sourcetype
+      - name: __packsource
+        value: "'cribl-google-workspace-rest-io.reports_saml'"
   savedState: {}
   description: Retrieve device audit events for a domain
   notifications: []
@@ -1116,6 +1136,8 @@ google_workspace_reports_chat:
     metadata:
       - value: "'gws:reports:chat'"
         name: sourcetype
+      - name: __packsource
+        value: "'cribl-google-workspace-rest-io.reports_chat'"
   savedState: {}
   description: Retrieve device audit events for a domain
   notifications: []
@@ -1218,6 +1240,8 @@ google_workspace_reports_access_transparency:
     metadata:
       - value: "'gws:reports:access_transparency'"
         name: sourcetype
+      - name: __packsource
+        value: "'cribl-google-workspace-rest-io.reports_access_transparency'"
   savedState: {}
   description: Retrieve device audit events for a domain
   notifications: []
@@ -1320,6 +1344,8 @@ google_workspace_reports_context_aware_access:
     metadata:
       - value: "'gws:reports:context_aware_access'"
         name: sourcetype
+      - name: __packsource
+        value: "'cribl-google-workspace-rest-io.reports_context_aware_access'"
   savedState: {}
   description: Retrieve device audit events for a domain
   notifications: []
@@ -1422,6 +1448,8 @@ google_workspace_reports_calendar:
     metadata:
       - value: "'gws:reports:calendar'"
         name: sourcetype
+      - name: __packsource
+        value: "'cribl-google-workspace-rest-io.reports_calendar'"
   savedState: {}
   description: Retrieve device audit events for a domain
   notifications: []
@@ -1524,6 +1552,8 @@ google_workspace_reports_groups_enterprise:
     metadata:
       - value: "'gws:reports:groups_enterprise'"
         name: sourcetype
+      - name: __packsource
+        value: "'cribl-google-workspace-rest-io.reports_groups_enterprise'"
   savedState: {}
   description: Retrieve device audit events for a domain
   notifications: []
@@ -1626,6 +1656,8 @@ google_workspace_reports_data_studio:
     metadata:
       - value: "'gws:reports:data_studio'"
         name: sourcetype
+      - name: __packsource
+        value: "'cribl-google-workspace-rest-io.reports_data_studio'"
   savedState: {}
   description: Retrieve device audit events for a domain
   notifications: []
@@ -1725,6 +1757,8 @@ google_workspace_alerts:
     metadata:
       - value: "'gws:alerts'"
         name: sourcetype
+      - name: __packsource
+        value: "'cribl-google-workspace-rest-io.gws_alerts'"
   savedState: {}
   description: Retrieve device audit events for a domain
   notifications: []
