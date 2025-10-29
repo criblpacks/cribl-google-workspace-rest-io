@@ -1,13 +1,12 @@
-# Pack Name
-Cribl Google Workspace Rest Collector
-
+# Cribl Google Workspace Rest Collector
+----
 ## About this Pack
 
 This pack is built as a complete SOURCE + DESTINATION solution (identified by the IO suffix). Data collection and delivery happen entirely within the pack's context, eliminating the need to connect it to globally defined Sources and Destinations. 
 
 This Pack is designed to collect, process, and output Google Workspace log data via the Google Workspace REST API. It collects security and audit logs from Google Workspace (formerly G Suite) for threat detection, compliance monitoring, and user activity tracking.
 
-The Pack includes optional Splunk output processing that maps data to Splunk sourcetypes compatible with the [Splunk Add-on for Google Workspace](https://splunkbase.splunk.com/app/5556).  By default, it maps Google Workspace data to the following sourcetypes (set dirextly in each Collector):
+The Pack includes optional Splunk output processing that maps data to Splunk sourcetypes compatible with the [Splunk Add-on for Google Workspace](https://splunkbase.splunk.com/app/5556).  By default, it maps Google Workspace data to the following sourcetypes (set directly in each Collector):
 
 ### Reports API Sourcetypes
 - Admin console activity logs: `sourcetype=gws:reports:admin`
