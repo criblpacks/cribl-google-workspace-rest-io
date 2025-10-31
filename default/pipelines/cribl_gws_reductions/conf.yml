@@ -7,12 +7,7 @@ groups:
       gws_events.csv lookup. To modify please click Knowledge > Lookups >
       gws_events.csv inside the pack.
     index: 3
-    disabled: true
-  rA3Bo0:
-    name: Remove duplicate fields
-    index: 4
-    description: Removes duplicate fields from event
-    disabled: true
+    disabled: false
 asyncFuncTimeout: 1000
 functions:
   - id: comment
@@ -34,13 +29,13 @@ functions:
       comment: "Author: Cribl Packs Team"
   - id: drop
     filter: __event_action == 'drop'
-    disabled: true
+    disabled: false
     conf: {}
     groupId: OgDHqy
     description: Drop events based on event action specified in gws_events.csv
   - id: sampling
     filter: __event_action == 'sample'
-    disabled: true
+    disabled: false
     conf:
       rules:
         - filter: "true"
@@ -50,7 +45,7 @@ functions:
       Default value is 1:10 ratio, but can be configured otherwise.
   - id: suppress
     filter: __event_action == 'suppress'
-    disabled: true
+    disabled: false
     conf:
       allow: 1
       suppressPeriodSec: 30
@@ -61,14 +56,4 @@ functions:
       keyExpr: "`${action}:${object_type}`"
     groupId: OgDHqy
     description: Suppress events based on event action specified in gws_events.csv
-  - id: eval
-    filter: "true"
-    disabled: true
-    conf:
-      add: []
-      remove:
-        - actor_details.uuid
-        - session.uuid
-        - aux_details.uuid
-    groupId: rA3Bo0
 description: Pipeline for applying reductions to Google Workspace events.
