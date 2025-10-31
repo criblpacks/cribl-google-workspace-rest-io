@@ -69,10 +69,10 @@ functions:
       matchMode: exact
       reloadPeriodSec: -1
       inFields:
-        - eventField: action
+        - eventField: events[0].name
           lookupField: action
-        - eventField: action.name
-          lookupField: action
+        - eventField: id.applicationName
+          lookupField: event_type
       addToEvent: false
       ignoreCase: false
       outFields:
@@ -134,6 +134,7 @@ functions:
           name: index
         - disabled: false
           value: "sourcetype ? sourcetype : C.vars['default_splunk_sourcetype']"
+          name: sourcetype
       keep:
         - _*
         - cribl*
