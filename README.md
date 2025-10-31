@@ -111,10 +111,10 @@ The Pack has the following variables:
 Upgrading certain Cribl Packs using the same Pack ID can have unintended consequences. See [Upgrading an Existing Pack](https://docs.cribl.io/stream/packs#upgrading) for details.
 ## Release Notes
 
-### Version 1.0.1
+### Version 1.0.2
 * Bug fix: Implemented tighter lookup restraints in the `cribl_gws` pipeline to allow for duplicate action values in the `gws_events.csv` lookup
 
-### Version 1.0.0
+### Version 1.0.1
 * Initial release
 
 ## Contributing to the Pack
