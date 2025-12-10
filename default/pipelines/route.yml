@@ -16,7 +16,7 @@ routes:
     description: Process Google Workspace Logs
     enableOutputExpression: false
     outputExpression: null
-    filter: __packsource.includes('cribl-google-workspace-rest-io')
+    filter: __packsource.incudes('cribl-google-workspace-rest-io')
     clones: []
     output: default
   - id: default

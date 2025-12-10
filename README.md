@@ -6,7 +6,7 @@ This pack is built as a complete SOURCE + DESTINATION solution (identified by th
 
 This Pack is designed to collect, process, and output Google Workspace log data via the Google Workspace REST API. It collects security and audit logs from Google Workspace (formerly G Suite) for threat detection, compliance monitoring, and user activity tracking.
 
-The Pack includes optional Splunk output processing that maps data to Splunk sourcetypes compatible with the [Splunk Add-on for Google Workspace](https://splunkbase.splunk.com/app/5556).  By default, it maps Google Workspace data to the following sourcetypes (set directly in each Collector):
+The Pack includes optional Splunk output processing that maps data to Splunk sourcetypes compatible with the [Splunk Add-on for Google Workspace](https://splunkbase.splunk.com/app/5556).  By default, it maps Google Workspace data to the following sourcetypes:
 
 ### Reports API Sourcetypes
 - Admin console activity logs: `sourcetype=gws:reports:admin`
@@ -34,7 +34,7 @@ The Pack includes optional Splunk output processing that maps data to Splunk sou
 * To use a different Destination: You must update the pack's routes to specify your desired Destination.
 * For immediate functionality without requiring Pack route filter expression modifications, every bundled Source within this pack adds a hidden field: `__packsource`. This field allows for seamless routing based on the Pack source.
 
-### Configure the Collectors
+### Obtain Google Workspace Credentials
 
 #### Create a new project in your Google Cloud Platform deployment.
 * Navigate to `https://console.cloud.google.com/projectcreate`. A Google Cloud project is required to use Google Workspace APIs. 
@@ -76,10 +76,12 @@ The Pack includes optional Splunk output processing that maps data to Splunk sou
     * ***https://www.googleapis.com/auth/apps.alerts*** 
 * Select Authorize.
 
-#### Update and Schedule the Collectors
+#### Configure the Collector
+Update the `google_workspace_reports` and `google_workspace_alerts` Collectors with the following:
+
 * Update the **Service account credentials** with the JSON key obtained from the above steps.
 * Update the **Impersonated account's email address** with the email address used to create the Service account. Note: This is NOT the email of the Service account. It needs to have Owner permissions.
-* Schedule the Collectors. By default, they run every 5 minutes - adjust as needed.
+* Schedule the Collectors. By default, it runs every 5 minutes - adjust as needed.
 
 ### Configure your Destination/Update Pack Routes
 To ensure proper data routing, you must make a choice: retain the current setting to use the Default Destination defined by your Worker Group, or define a new Destination directly inside this pack and adjust the pack's route accordingly.
@@ -110,6 +112,9 @@ The Pack has the following variables:
 
 Upgrading certain Cribl Packs using the same Pack ID can have unintended consequences. See [Upgrading an Existing Pack](https://docs.cribl.io/stream/packs#upgrading) for details.
 ## Release Notes
+
+### Version 1.1.0
+* Collapsed multiple Collectors into two Collectors to simplify configuration.
 
 ### Version 1.0.2
 * Converted the sourcetypes assigned to each Collector to variabes.

@@ -97,8 +97,8 @@ google_workspace_reports:
           value: "100"
         - name: pageToken
           value: "`${__e['nextPageToken'] === null ? null : __e['nextPageToken']}`"
-      subject: ian@nthdegree.io
-      serviceAccountCredentials: changeme
+      subject: YOUR_IMPERSONATED_EMAIL@company.com
+      serviceAccountCredentials: YOUR_SERVICE_ACCOUNT_CREDENTIALS
     destructive: false
     encoding: utf8
     type: rest
@@ -115,7 +115,108 @@ google_workspace_reports:
       - name: sourcetype
         value: "`${C.vars['default_splunk_sourcetype']}`"
       - name: __packsource
-        value: "'cribl-google-workspace-rest-io.reports_admin'"
+        value: "'cribl-google-workspace-rest-io.reports'"
   savedState: {}
   notifications: []
   description: Retrieve all administrative activities
+google_workspace_alerts:
+  type: collection
+  ttl: 4h
+  ignoreGroupJobsLimit: false
+  removeFields: []
+  resumeOnBoot: false
+  schedule:
+    cronSchedule: "*/5 * * * *"
+    maxConcurrentRuns: 1
+    skippable: true
+    run:
+      rescheduleDroppedTasks: true
+      maxTaskReschedule: 1
+      logLevel: info
+      jobTimeout: 60m
+      mode: run
+      timeRangeType: relative
+      timeWarning: {}
+      expression: "true"
+      minTaskSize: 1MB
+      maxTaskSize: 10MB
+      stateTracking:
+        stateUpdateExpression: "__timestampExtracted !== false && {latestTime:
+          (state.latestTime || 0) > _time ? state.latestTime : _time}"
+        stateMergeExpression: "(prevState.latestTime || 0) > newState.latestTime ?
+          prevState : newState"
+        enabled: true
+      earliest: -10m@m
+      latest: -5m@m
+    enabled: false
+  streamtags:
+    - google
+  workerAffinity: false
+  collector:
+    conf:
+      discovery:
+        discoverType: none
+      collectMethod: get
+      pagination:
+        type: response_body
+        maxPages: 50
+        attribute:
+          - nextPageToken
+        lastPageExpr: "!nextPageToken"
+      authentication: google_oauth
+      timeout: 0
+      useRoundRobinDns: false
+      disableTimeFilter: false
+      decodeUrl: false
+      rejectUnauthorized: true
+      captureHeaders: false
+      stopOnEmptyResults: false
+      safeHeaders: []
+      retryRules:
+        type: backoff
+        interval: 1000
+        limit: 5
+        multiplier: 2
+        maxIntervalMs: 20000
+        codes:
+          - 429
+          - 503
+        enableHeader: true
+        retryConnectTimeout: false
+        retryConnectReset: false
+        retryHeaderName: retry-after
+      __scheduling:
+        stateTracking: {}
+      scopes:
+        - https://www.googleapis.com/auth/apps.alerts
+      collectUrl: "'https://alertcenter.googleapis.com/v1beta1/alerts'"
+      collectRequestParams:
+        - name: filter
+          value: '`createTime>=\"${new Date((state.latestTime * 1000 || earliest * 1000 ||
+            Date.now()-(7*24*60*60*1000))).toISOString()}\"`'
+        - name: pageSize
+          value: "100"
+        - name: pageToken
+          value: "`${__e['nextPageToken'] === null ? null : __e['nextPageToken']}`"
+      subject: YOUR_IMPERSONATED_EMAIL@company.com
+      serviceAccountCredentials: YOUR_SERVICE_ACCOUNT_CREDENTIALS
+    destructive: false
+    encoding: utf8
+    type: rest
+  input:
+    type: collection
+    staleChannelFlushMs: 10000
+    sendToRoutes: true
+    preprocess:
+      disabled: true
+    throttleRatePerSec: "0"
+    breakerRulesets:
+      - Google Workspace Alerts API Ruleset
+    metadata:
+      - value: "'gws:alerts'"
+        name: sourcetype
+      - name: __packsource
+        value: "'cribl-google-workspace-rest-io.gws_alerts'"
+  savedState: {}
+  description: Workspace Alert Center events
+  notifications: []
