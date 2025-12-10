@@ -112,6 +112,9 @@ Upgrading certain Cribl Packs using the same Pack ID can have unintended consequ
 ## Release Notes
 
 ### Version 1.0.2
+* Converted the sourcetypes assigned to each Collector to variabes.
+
+### Version 1.0.2
 * Bug fix: Implemented tighter lookup restraints in the `cribl_gws` pipeline to allow for duplicate action values in the `gws_events.csv` lookup
 
 ### Version 1.0.1

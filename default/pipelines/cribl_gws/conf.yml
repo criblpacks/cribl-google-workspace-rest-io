@@ -15,7 +15,7 @@ groups:
     name: Outputs
     description: Select the output required, if nothing enabled standard JSON will be sent
     index: 5
-    disabled: true
+    disabled: false
 asyncFuncTimeout: 1000
 functions:
   - id: comment
@@ -106,13 +106,13 @@ functions:
     groupId: SDNEgH
   - id: comment
     filter: "true"
-    disabled: true
+    disabled: false
     conf:
       comment: Output to Splunk
     groupId: KsiiV5
   - id: serialize
     filter: "true"
-    disabled: true
+    disabled: false
     conf:
       type: json
       dstField: _raw
@@ -126,14 +126,35 @@ functions:
     description: Serialize JSON to _raw
   - id: eval
     filter: "true"
-    disabled: true
+    disabled: false
     conf:
       add:
         - disabled: false
           value: "index ? index : C.vars['default_splunk_index']"
           name: index
         - disabled: false
-          value: "sourcetype ? sourcetype : C.vars['default_splunk_sourcetype']"
+          value: >-
+            sourcetype
+              ? sourcetype
+              : ({
+                  admin:                     C.vars['splunk_sourcetype_gws_admin'],
+                  login:                     C.vars['splunk_sourcetype_gws_login'],
+                  token:                     C.vars['splunk_sourcetype_gws_token'],
+                  drive:                     C.vars['splunk_sourcetype_gws_drive'],
+                  gcp:                       C.vars['splunk_sourcetype_gws_gcp'],
+                  rules:                     C.vars['splunk_sourcetype_gws_rules'],
+                  devices:                   C.vars['splunk_sourcetype_gws_devices'],
+                  chrome:                    C.vars['splunk_sourcetype_gws_chrome'],
+                  saml:                      C.vars['splunk_sourcetype_gws_saml'],
+                  chat:                      C.vars['splunk_sourcetype_gws_chat'],
+                  calendar:                  C.vars['splunk_sourcetype_gws_calendar'],
+                  alerts:                    C.vars['splunk_sourcetype_gws_alerts'],
+                  gemini_in_workspace_apps:  C.vars['splunk_sourcetype_gws_gemini_in_workspace_apps'],
+                  access_transparency:       C.vars['splunk_sourcetype_gws_access_transparency'],
+                  context_aware_access:      C.vars['splunk_sourcetype_gws_context_aware_access'],
+                  groups_enterprise:         C.vars['splunk_sourcetype_gws_groups_enterprise'],
+                  data_studio:               C.vars['splunk_sourcetype_gws_data_studio']
+                }[id.applicationName] || C.vars['default_splunk_sourcetype'])
           name: sourcetype
       keep:
         - _*
