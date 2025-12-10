@@ -1,0 +1,262 @@
+action,description,event_type,event_action
+2sv_disable,2-step verification disabled,login,keep
+2sv_enroll,2-step verification enrolled,login,keep
+password_edit,Account password changed,login,keep
+recovery_email_edit,Account recovery email changed,login,keep
+recovery_phone_edit,Account recovery phone changed,login,keep
+recovery_secret_qa_edit,Account recovery secret question/answer changed,login,keep
+account_disabled_password_leak,Account disabled due to leaked password,login,keep
+passkey_enrolled,Passkey enrolled by user,login,keep
+passkey_removed,Passkey removed by user,login,keep
+suspicious_login,Suspicious login blocked,login,keep
+suspicious_login_less_secure_app,Suspicious login from less secure app blocked,login,keep
+suspicious_programmatic_login,Suspicious programmatic login blocked,login,keep
+user_signed_out_due_to_suspicious_session_cookie,User signed out due to suspicious session cookie,login,keep
+account_disabled_generic,User suspended,login,keep
+account_disabled_spamming_through_relay,User suspended due to spam through relay,login,keep
+account_disabled_spamming,User suspended due to spamming,login,keep
+account_disabled_hijacked,User suspended due to suspicious activity,login,keep
+titanium_enroll,Advanced Protection enrolled,login,keep
+titanium_unenroll,Advanced Protection unenrolled,login,keep
+gov_attack_warning,Government-backed attack warning,login,keep
+blocked_sender,Blocked sender email address,login,keep
+email_forwarding_out_of_domain,Out of domain email forwarding enabled,login,keep
+login_failure,Failed login attempt,login,keep
+login_challenge,Login challenge presented,login,keep
+login_verification,Login verification presented,login,keep
+logout,User logged out,login,keep
+risky_sensitive_action_allowed,Sensitive action allowed,login,keep
+risky_sensitive_action_blocked,Sensitive action blocked,login,keep
+login_success,Successful login,login,keep
+activity,OAuth token activity,token,keep
+authorize,User authorized access to application,token,keep
+request,Access requested for application,token,keep
+revoke,Access revoked for application,token,keep
+CHANGE_MOBILE_SETTING,Mobile setting changed,admin,keep
+ADD_TO_TRUSTED_OAUTH2_APPS,App added to trusted OAuth2 apps,admin,keep
+SUSPEND_USER,User suspended,admin,keep
+USER_LICENSE_REVOKE,User license revoked,admin,keep
+CREATE_USER,User created,admin,keep
+AUTHORIZE_API_CLIENT_ACCESS,API client access authorized,admin,keep
+DELETE_USER,User deleted,admin,keep
+UNARCHIVE_USER,User unarchived,admin,keep
+UNDELETE_USER,User undeleted,admin,keep
+MOVE_USER_TO_ORG_UNIT,User moved to org unit,admin,keep
+ADD_RECOVERY_EMAIL,Recovery email added,admin,keep
+REMOVE_RECOVERY_EMAIL,Recovery email removed,admin,keep
+ADD_RECOVERY_PHONE,Recovery phone added,admin,keep
+REMOVE_RECOVERY_PHONE,Recovery phone removed,admin,keep
+GRANT_ADMIN_PRIVILEGE,Admin privilege granted,admin,keep
+REVOKE_ADMIN_PRIVILEGE,Admin privilege revoked,admin,keep
+CHANGE_RECOVERY_EMAIL,Recovery email changed,admin,keep
+CHANGE_RECOVERY_PHONE,Recovery phone changed,admin,keep
+CHANGE_PASSWORD,Password changed,admin,keep
+TURN_OFF_2_STEP_VERIFICATION,2-step verification turned off,admin,keep
+ENABLE_USER_IP_WHITELIST,User IP whitelist enabled,admin,keep
+UNENROLL_USER_FROM_TITANIUM,User unenrolled from Advanced Protection,admin,keep
+GRANT_DELEGATED_ADMIN_PRIVILEGES,Delegated admin privileges granted,admin,keep
+SECURITY_KEY_REGISTERED_FOR_USER,Security key registered for user,admin,keep
+UNBLOCK_USER_SESSION,User session unblocked,admin,keep
+ARCHIVE_USER,User archived,admin,keep
+GENERATE_2SV_SCRATCH_CODES,2SV scratch codes generated,admin,keep
+UNENROLL_USER_FROM_STRONG_AUTH,User unenrolled from strong auth,admin,keep
+CHANGE_PASSWORD_ON_NEXT_LOGIN,Password change required on next login,admin,keep
+CREATE_EMAIL_MONITOR,Email monitor created,admin,keep
+DELETE_EMAIL_MONITOR,Email monitor deleted,admin,keep
+RENAME_USER,User renamed,admin,keep
+USER_PUT_IN_TWO_STEP_VERIFICATION_GRACE_PERIOD,User put in 2-step verification grace period,admin,keep
+GMAIL_RESET_USER,Gmail user reset,admin,keep
+MAIL_ROUTING_DESTINATION_ADDED,Mail routing destination added,admin,keep
+MAIL_ROUTING_DESTINATION_REMOVED,Mail routing destination removed,admin,keep
+UNSUSPEND_USER,User unsuspended,admin,keep
+ASSIGN_ROLE,Role assigned,admin,keep
+BLOCK_ALL_THIRD_PARTY_API_ACCESS,All third party API access blocked,admin,keep
+UNBLOCK_ALL_THIRD_PARTY_API_ACCESS,All third party API access unblocked,admin,keep
+ALLOW_SERVICE_FOR_OAUTH2_ACCESS,Service allowed for OAuth2 access,admin,keep
+CHANGE_APP_ACCESS_SETTINGS_COLLECTION_ID,App access settings collection ID changed,admin,keep
+ADD_TO_BLOCKED_OAUTH2_APPS,App added to blocked OAuth2 apps,admin,keep
+REMOVE_FROM_BLOCKED_OAUTH2_APPS,App removed from blocked OAuth2 apps,admin,keep
+REMOVE_FROM_TRUSTED_OAUTH2_APPS,App removed from trusted OAuth2 apps,admin,keep
+BLOCK_ON_DEVICE_ACCESS,Device access blocked,admin,keep
+CHANGE_TWO_STEP_VERIFICATION_ENROLLMENT_PERIOD_DURATION,2-step verification enrollment period duration changed,admin,keep
+CHANGE_TWO_STEP_VERIFICATION_FREQUENCY,2-step verification frequency changed,admin,keep
+CHANGE_TWO_STEP_VERIFICATION_GRACE_PERIOD_DURATION,2-step verification grace period duration changed,admin,keep
+CHANGE_TWO_STEP_VERIFICATION_START_DATE,2-step verification start date changed,admin,keep
+CHANGE_ALLOWED_TWO_STEP_VERIFICATION_METHODS,Allowed 2-step verification methods changed,admin,keep
+CHANGE_CAA_APP_ASSIGNMENTS,Context-aware access app assignments changed,admin,keep
+UNTRUST_DOMAIN_OWNED_OAUTH2_APPS,Domain owned OAuth2 apps untrusted,admin,keep
+TRUST_DOMAIN_OWNED_OAUTH2_APPS,Domain owned OAuth2 apps trusted,admin,keep
+ENABLE_NON_ADMIN_USER_PASSWORD_RECOVERY,Non-admin user password recovery enabled,admin,keep
+ENFORCE_STRONG_AUTHENTICATION,Strong authentication enforced,admin,keep
+WEAK_PROGRAMMATIC_LOGIN_SETTINGS_CHANGED,Weak programmatic login settings changed,admin,keep
+SESSION_CONTROL_SETTINGS_CHANGE,Session control settings changed,admin,keep
+UNBLOCK_ON_DEVICE_ACCESS,Device access unblocked,admin,keep
+CREATE_ROLE,Role created,admin,keep
+ADD_PRIVILEGE,Privilege added,admin,keep
+UPDATE_ROLE,Role updated,admin,keep
+CHANGE_EMAIL_SETTING,Email setting changed,admin,keep
+CHANGE_GMAIL_SETTING,Gmail setting changed,admin,keep
+CREATE_GMAIL_SETTING,Gmail setting created,admin,keep
+CHANGE_FIRST_NAME,First name changed,admin,keep
+CHANGE_LAST_NAME,Last name changed,admin,keep
+CHANGE_USER_LOCATION,User location changed,admin,keep
+RESET_SIGNIN_COOKIES,Sign-in cookies reset,admin,keep
+UNASSIGN_ROLE,Role unassigned,admin,keep
+USER_LICENSE_ASSIGNMENT,User license assigned,admin,keep
+CREATE_CALENDAR_RESOURCE,Calendar resource created,admin,keep
+UPDATE_CALENDAR_RESOURCE,Calendar resource updated,admin,keep
+DELETE_GMAIL_SETTING,Gmail setting deleted,admin,keep
+DELETE_ROLE,Role deleted,admin,keep
+REMOVE_PRIVILEGE,Privilege removed,admin,keep
+RENAME_ROLE,Role renamed,admin,keep
+DISALLOW_SERVICE_FOR_OAUTH2_ACCESS,Service disallowed for OAuth2 access,admin,keep
+ORG_LICENSE_REVOKE,Organization license revoked,admin,keep
+EMAIL_UNDELETE,Email undeleted,admin,keep
+DROP_FROM_QUARANTINE,Message dropped from quarantine,admin,keep
+REJECT_FROM_QUARANTINE,Message rejected from quarantine,admin,keep
+RELEASE_FROM_QUARANTINE,Message released from quarantine,admin,keep
+TRANSFER_DOCUMENT_OWNERSHIP,Document ownership transferred,admin,keep
+DRIVE_DATA_RESTORE,Drive data restored,admin,keep
+CHANGE_DOCS_SETTING,Docs setting changed,admin,keep
+MOVE_SHARED_DRIVE_TO_ORG_UNIT,Shared drive moved to org unit,admin,keep
+deny_access_request,Access request denied,drive,keep
+expire_access_request,Access request expired,drive,keep
+request_access,Access requested to item,drive,keep
+add_to_folder,Item added to folder,drive,keep
+appeal_abuse_violation,Abuse violation appealed,drive,keep
+approval_canceled,Approval canceled,drive,keep
+approval_comment_added,Comment added to approval,drive,keep
+approval_completed,Approval completed,drive,keep
+approval_decisions_reset,Approval decisions reset,drive,keep
+approval_due_time_change,Approval due time changed,drive,keep
+approval_requested,Approval requested,drive,keep
+approval_reviewer_change,Approval reviewer changed,drive,keep
+approval_reviewer_responded,Approval reviewer responded,drive,keep
+create_comment,Comment created,drive,keep
+delete_comment,Comment deleted,drive,keep
+edit_comment,Comment edited,drive,keep
+reassign_comment,Comment reassigned,drive,keep
+reopen_comment,Comment reopened,drive,keep
+resolve_comment,Comment resolved,drive,keep
+connected_sheets_query,Connected Sheets query executed,drive,keep
+copy,Document copied,drive,keep
+create,Document created,drive,keep
+delete,Document deleted,drive,keep
+download,Document downloaded,drive,keep
+email_as_attachment,Document emailed as attachment,drive,keep
+edit,Document edited,drive,keep
+email_collaborators,Collaborators emailed,drive,keep
+cancel_esignature,eSignature canceled,drive,keep
+complete_esignature,eSignature completed,drive,keep
+request_esignature,eSignature requested,drive,keep
+review_esignature,eSignature reviewer responded,drive,keep
+download_forms_response,Forms response downloaded,drive,keep
+access_item_content,Item content accessed by application,drive,keep
+sync_item_content,Item content synced,drive,keep
+move,Item moved,drive,keep
+print,Item printed,drive,keep
+publish_change,Publishing settings changed,drive,keep
+remove_from_folder,Item removed from folder,drive,keep
+rename,Item renamed,drive,keep
+restore_event,Item restored,drive,keep
+sheets_import_range,Sheets import range used,drive,keep
+trash,Item moved to trash,drive,keep
+untrash,Item removed from trash,drive,keep
+upload,Item uploaded,drive,keep
+view,Item viewed,drive,keep
+change_document_access_scope,Document access scope changed,drive,keep
+change_document_visibility,Document visibility changed,drive,keep
+change_user_access,User access changed,drive,keep
+change_acl_editors,ACL editors changed,drive,keep
+shared_drive_membership_change,Shared drive membership changed,drive,keep
+change_document_visibility_hierarchy_reconciled,Document visibility hierarchy reconciled,drive,keep
+change_user_access_hierarchy_reconciled,User access hierarchy reconciled,drive,keep
+change_document_access_scope_hierarchy_reconciled,Document access scope hierarchy reconciled,drive,keep
+CHROME_OS_LOGIN_FAILURE_EVENT,ChromeOS login failure,chrome,keep
+CHROME_OS_LOGIN_EVENT,ChromeOS login,chrome,keep
+LOGIN_EVENT,Browser login,chrome,keep
+CHROME_OS_REPORTING_DATA_LOST,ChromeOS reporting data lost,chrome,keep
+PASSWORD_REUSE,Password reuse detected,chrome,keep
+DLP_EVENT,Data loss prevention event,chrome,keep
+CONTENT_UNSCANNED,Content unscanned,chrome,keep
+MALWARE_TRANSFER,Malware transfer detected,chrome,keep
+PASSWORD_BREACH,Password breach detected,chrome,keep
+SENSITIVE_DATA_TRANSFER,Sensitive data transfer,chrome,keep
+UNSAFE_SITE_VISIT,Unsafe site visit,chrome,keep
+DEVICE_BOOT_STATE_CHANGE,Device boot state changed,chrome,keep
+PASSWORD_CHANGED,Password changed,chrome,keep
+CHROME_OS_ADD_USER,ChromeOS user added,chrome,keep
+CHROME_OS_REMOVE_USER,ChromeOS user removed,chrome,keep
+CHROME_OS_LOGIN_LOGOUT_EVENT,ChromeOS login/logout event,chrome,keep
+CHROME_OS_LOGOUT_EVENT,ChromeOS logout,chrome,keep
+CONTENT_TRANSFER,Content transferred,chrome,keep
+DEVICE_COMPLIANCE_CHANGED_EVENT,Device compliance changed,mobile,keep
+RISK_SIGNAL_UPDATED_EVENT,Risk signal updated,mobile,keep
+APPLICATION_EVENT,Application state changed,mobile,keep
+FAILED_PASSWORD_ATTEMPTS_EVENT,Failed password attempts,mobile,keep
+DEVICE_COMPROMISED_EVENT,Device compromised,mobile,keep
+APPLICATION_REPORT_EVENT,Application report event,mobile,keep
+OS_UPDATED_EVENT,Operating system updated,mobile,keep
+DEVICE_ACTION_EVENT,Device action performed,mobile,keep
+DEVICE_OWNERSHIP_CHANGE_EVENT,Device ownership changed,mobile,keep
+DEVICE_SETTINGS_UPDATED_EVENT,Device settings updated,mobile,keep
+DEVICE_SYNC_EVENT,Device synced,mobile,keep
+ANDROID_WORK_PROFILE_SUPPORT_ENABLED_EVENT,Android work profile support enabled,mobile,keep
+SUSPICIOUS_ACTIVITY_EVENT,Suspicious activity detected,mobile,keep
+DEVICE_REGISTER_UNREGISTER_EVENT,Device registered or unregistered,mobile,keep
+ADVANCED_POLICY_SYNC_EVENT,Advanced policy synced,mobile,keep
+APPLE_DEP_DEVICE_UPDATE_ON_APPLE_PORTAL_EVENT,Apple DEP device updated on Apple portal,mobile,keep
+attachment_download,Attachment downloaded,chat,keep
+attachment_upload,Attachment uploaded,chat,keep
+add_room_member,Room member added,chat,keep
+block_user,User blocked,chat,keep
+remove_room_member,Room member removed,chat,keep
+direct_message_started,Direct message started,chat,keep
+invite_send,Invite sent,chat,keep
+emoji_created,Emoji created,chat,keep
+message_posted,Message posted,chat,keep
+room_created,Room created,chat,keep
+emoji_deleted,Emoji deleted,chat,keep
+message_edited,Message edited,chat,keep
+block_room,Room blocked,chat,keep
+DELETE_DISTRIBUTION_CONTENT,Distribution content deleted,data_studio,keep
+EDIT_DISTRIBUTION_CONTENT,Distribution content edited,data_studio,keep
+CREATE_DISTRIBUTION_CONTENT,Distribution content created,data_studio,keep
+CHANGE_ASSET_LINK_SHARING_ACCESS_TYPE,Asset link sharing access type changed,data_studio,keep
+RESTORE,Asset restored,data_studio,keep
+CHANGE_ASSET_LINK_SHARING_VISIBILITY,Asset link sharing visibility changed,data_studio,keep
+CREATE,Asset created,data_studio,keep
+TRASH,Asset trashed,data_studio,keep
+DOWNLOAD_REPORT,Report downloaded,data_studio,keep
+EDIT,Asset edited,data_studio,keep
+DATA_EXPORT,Data exported,data_studio,keep
+CHANGE_USER_ACCESS,User access changed,data_studio,keep
+login_success,SAML login successful,saml,keep
+login_failure,SAML login failed,saml,keep
+add_member_role,Member role added,groups_enterprise,keep
+add_service_account_permission,Service account permission added,groups_enterprise,keep
+join,Member joined group,groups_enterprise,keep
+unban_member,Member unbanned,groups_enterprise,keep
+add_member,Member added to group,groups_enterprise,keep
+add_security_setting,Security setting added,groups_enterprise,keep
+change_security_setting,Security setting changed,groups_enterprise,keep
+create_group,Group created,groups_enterprise,keep
+delete_group,Group deleted,groups_enterprise,keep
+invite_member,Member invited,groups_enterprise,keep
+IMPORT_SSH_PUBLIC_KEY,SSH public key imported,gcp,keep
+GET_SSH_PUBLIC_KEY,SSH public key retrieved,gcp,keep
+GET_LOGIN_PROFILE,Login profile retrieved,gcp,keep
+UPDATE_SSH_PUBLIC_KEY,SSH public key updated,gcp,keep
+change_calendar_acls,Calendar ACLs changed,calendar,keep
+create_calendar,Calendar created,calendar,keep
+delete_calendar,Calendar deleted,calendar,keep
+create_event,Calendar event created,calendar,keep
+delete_event,Calendar event deleted,calendar,keep
+add_event_guest,Event guest added,calendar,keep
+change_event,Calendar event changed,calendar,keep
+restore_event,Calendar event restored,calendar,keep
+ACCESS_DENY_EVENT,Access denied by context-aware access policy,context_aware_access,keep
+action_complete,Rule action completed,rules,keep
+label_applied,Label applied by rule,rules,keep
+label_field_value_changed,Label field value changed by rule,rules,keep
+ACCESS_TRANSPARENCY_EVENT,Google employee accessed data,access_transparency,keep

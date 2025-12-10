@@ -1,0 +1,46 @@
+Google Workspace Alerts API Ruleset:
+  minRawLength: 256
+  rules:
+    - condition: "true"
+      type: json_array
+      timestampAnchorRegex: /^/
+      timestamp:
+        type: auto
+        length: 150
+      timestampTimezone: local
+      timestampEarliest: -420weeks
+      timestampLatest: +1week
+      maxEventBytes: 51200
+      disabled: false
+      parserEnabled: false
+      shouldUseDataRaw: false
+      jsonExtractAll: true
+      eventBreakerRegex: /[\n\r]+(?!\s)/
+      name: gws_alerts
+      jsonTimeField: createTime
+  tags: google
+  lib: custom
+Google Workspace API Ruleset:
+  lib: custom
+  minRawLength: 256
+  tags: google
+  rules:
+    - condition: "true"
+      type: json_array
+      timestampAnchorRegex: /^/
+      timestamp:
+        type: auto
+        length: 150
+      timestampTimezone: local
+      timestampEarliest: -420weeks
+      timestampLatest: +1week
+      maxEventBytes: 134217728
+      disabled: false
+      parserEnabled: false
+      shouldUseDataRaw: false
+      jsonExtractAll: true
+      eventBreakerRegex: /[\n\r]+(?!\s)/
+      name: get_items
+      jsonArrayField: items
+      jsonTimeField: id.time
+      fields: []

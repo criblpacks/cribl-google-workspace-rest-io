@@ -1,0 +1,40 @@
+SXNQfm:
+  sampleName: cribl_gws_reports_gemini_in_workspace_apps.log
+  created: 1761245725128
+  size: 2385
+  numEvents: 1
+76j6z5:
+  sampleName: cribl_gws_alerts.log
+  created: 1761245790841
+  size: 6467
+  numEvents: 4
+QtiaAD:
+  sampleName: cribl_gws_reports_admin.log
+  created: 1761245839122
+  size: 35705
+  numEvents: 17
+MqFKK3:
+  sampleName: cribl_gws_reports_login.log
+  created: 1761245962099
+  size: 62030
+  numEvents: 26
+76NkM7:
+  sampleName: cribl_gws_reports_token.log
+  created: 1761245998180
+  size: 130674
+  numEvents: 39
+wi7hty:
+  sampleName: cribl_gws_reports_drive.log
+  created: 1761246030383
+  size: 23197
+  numEvents: 3
+gahWwV:
+  sampleName: cribl_gws_reports_apps.log
+  created: 1761246068969
+  size: 4815
+  numEvents: 2
+kn4XQa:
+  sampleName: cribl_gws_reports_chat.log
+  created: 1761246094243
+  size: 11672
+  numEvents: 4
