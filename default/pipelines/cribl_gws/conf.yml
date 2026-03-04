@@ -110,23 +110,24 @@ functions:
     conf:
       comment: Output to Splunk
     groupId: KsiiV5
-  - filter: 'true'
+  - id: serialize
+    filter: 'true'
+    disabled: false
     conf:
       type: json
       dstField: _raw
       fields:
-        - '!_*'
-        - '!cribl*'
-        - '!source'
-        - '!host'
-        - '!sourcetype'
-        - '!index'
-        - '*'
-    id: serialize
-    disabled: false
-    groupId: BRnjBm
+        - "!_*"
+        - "!cribl*"
+        - "!source"
+        - "!host"
+        - "!sourcetype"
+        - "!index"
+        - "*"
+    groupId: KsiiV5
     description: Serialize JSON to _raw
-  - filter: 'true'
+  - id: eval
+    filter: 'true'
     conf:
       add:
         - disabled: false
@@ -158,9 +159,8 @@ functions:
           name: sourcetype
       keep: []
       remove: []
-    id: eval
     disabled: false
-    groupId: BRnjBm
+    groupId: KsiiV5
     description: Sets the index and sourcetype for Splunk output
   - filter: 'true'
     conf:
@@ -177,7 +177,9 @@ functions:
     id: eval
     disabled: false
     description: Sets the index and sourcetype for Splunk output
-    groupId: BRnjBm
+    groupId: KsiiV5
 description: >-
   Pipeline for parsing, formatting and filtering Google Workspace Rest API
+  events.
+
   events.
