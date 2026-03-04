@@ -160,8 +160,8 @@ functions:
           name: sourcetype
       keep: []
       remove: []
-    description: Sets the index and sourcetype for Splunk output
     groupId: KsiiV5
+    description: Sets the index and sourcetype for Splunk output
   - id: eval
     filter: 'true'
     disabled: false
@@ -176,7 +176,7 @@ functions:
         - sourcetype
       remove:
         - '*'
-    description: Removes unnecessary fields
     groupId: KsiiV5
+    description: Removes unnecessary fields
 description: Pipeline for parsing, formatting and filtering Google Workspace
   Rest API events.
