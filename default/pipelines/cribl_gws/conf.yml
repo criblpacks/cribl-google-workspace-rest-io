@@ -175,7 +175,7 @@ functions:
         - index
         - sourcetype
       remove:
-        - '*'
+        - "*"
     groupId: KsiiV5
     description: Removes unnecessary fields
 description: Pipeline for parsing, formatting and filtering Google Workspace
