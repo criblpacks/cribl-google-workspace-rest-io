@@ -111,7 +111,7 @@ functions:
       comment: Output to Splunk
     groupId: KsiiV5
   - id: serialize
-    filter: 'true'
+    filter: "true"
     disabled: false
     conf:
       type: json
@@ -127,11 +127,12 @@ functions:
     groupId: KsiiV5
     description: Serialize JSON to _raw
   - id: eval
-    filter: 'true'
+    filter: "true"
+    disabled: false
     conf:
       add:
         - disabled: false
-          value: 'index ? index : C.vars[''default_splunk_index'']'
+          value: "index ? index : C.vars['default_splunk_index']"
           name: index
         - disabled: false
           value: |-
@@ -159,7 +160,6 @@ functions:
           name: sourcetype
       keep: []
       remove: []
-    disabled: false
     groupId: KsiiV5
     description: Sets the index and sourcetype for Splunk output
   - id: eval
