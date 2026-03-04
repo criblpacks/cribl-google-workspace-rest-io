@@ -121,6 +121,8 @@ functions:
         - "!cribl*"
         - "!source"
         - "!host"
+        - "!sourcetype"
+        - "!index"
         - "*"
     groupId: KsiiV5
     description: Serialize JSON to _raw
@@ -133,8 +135,8 @@ functions:
           value: "index ? index : C.vars['default_splunk_index']"
           name: index
         - disabled: false
-          value: >-
-            sourcetype
+          value: |-
+            sourcetype=="gws:alerts"
               ? sourcetype
               : ({
                   admin:                     C.vars['splunk_sourcetype_gws_admin'],
@@ -156,6 +158,15 @@ functions:
                   data_studio:               C.vars['splunk_sourcetype_gws_data_studio']
                 }[id.applicationName] || C.vars['default_splunk_sourcetype'])
           name: sourcetype
+      keep: []
+      remove: []
+    groupId: KsiiV5
+    description: Sets the index and sourcetype for Splunk output
+  - id: eval
+    filter: 'true'
+    disabled: false
+    conf:
+      add: []
       keep:
         - _*
         - cribl*
@@ -166,6 +177,6 @@ functions:
       remove:
         - "*"
     groupId: KsiiV5
-    description: Sets the index and sourcetype for Splunk output
+    description: Removes unnecessary fields
 description: Pipeline for parsing, formatting and filtering Google Workspace
   Rest API events.
