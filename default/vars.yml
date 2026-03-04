@@ -11,3 +11,105 @@ default_splunk_sourcetype:
     Collector configuration
   value: "'gws:events'"
   tags: google
+splunk_sourcetype_gws_admin:
+  type: any
+  lib: custom
+  description: Splunk sourcetype for Google Workspace Reports API Admin events
+  value: "'gws:reports:admin'"
+  tags: google
+splunk_sourcetype_gws_login:
+  type: any
+  lib: custom
+  description: Splunk sourcetype for Google Workspace Reports API Login events
+  value: "'gws:reports:login'"
+  tags: google
+splunk_sourcetype_gws_token:
+  type: any
+  lib: custom
+  description: Splunk sourcetype for Google Workspace Reports API Token events
+  value: "'gws:reports:token'"
+  tags: google
+splunk_sourcetype_gws_drive:
+  type: any
+  lib: custom
+  description: Splunk sourcetype for Google Workspace Reports API Drive events
+  value: "'gws:reports:drive'"
+  tags: google
+splunk_sourcetype_gws_gcp:
+  type: any
+  lib: custom
+  description: Splunk sourcetype for Google Workspace Reports API GCP events
+  value: "'gws:reports:gcp'"
+  tags: google
+splunk_sourcetype_gws_rules:
+  type: any
+  lib: custom
+  description: Splunk sourcetype for Google Workspace Reports API Rules events
+  value: "'gws:reports:rules'"
+  tags: google
+splunk_sourcetype_gws_devices:
+  type: any
+  lib: custom
+  description: Splunk sourcetype for Google Workspace Reports API Devices events
+  value: "'gws:reports:devices'"
+  tags: google
+splunk_sourcetype_gws_chrome:
+  type: any
+  lib: custom
+  description: Splunk sourcetype for Google Workspace Reports API Chrome events
+  value: "'gws:reports:chrome'"
+  tags: google
+splunk_sourcetype_gws_saml:
+  type: any
+  lib: custom
+  description: Splunk sourcetype for Google Workspace Reports API SAML events
+  value: "'gws:reports:saml'"
+  tags: google
+splunk_sourcetype_gws_chat:
+  type: any
+  lib: custom
+  description: Splunk sourcetype for Google Workspace Reports API Chat events
+  value: "'gws:reports:chat'"
+  tags: google
+splunk_sourcetype_gws_calendar:
+  type: any
+  lib: custom
+  description: Splunk sourcetype for Google Workspace Reports API Calendar events
+  value: "'gws:reports:calendar'"
+  tags: google
+splunk_sourcetype_gws_alerts:
+  type: any
+  lib: custom
+  description: Splunk sourcetype for Google Workspace Alerts Center events
+  value: "'gws:reports:alerts'"
+  tags: google
+splunk_sourcetype_gws_gemini_in_workspace_apps:
+  type: any
+  lib: custom
+  description: Splunk sourcetype for Google Workspace Reports API Gemini events
+  value: "'gws:reports:gemini_in_workspace_apps'"
+  tags: google
+splunk_sourcetype_gws_access_transparency:
+  type: any
+  lib: custom
+  description: Splunk sourcetype for Google Workspace Reports API Access Transparency events
+  value: "'gws:reports:access_transparency'"
+  tags: google
+splunk_sourcetype_gws_context_aware_access:
+  type: any
+  lib: custom
+  description: Splunk sourcetype for Google Workspace Reports API Context-Aware Access events
+  value: "'gws:reports:context_aware_access'"
+  tags: google
+splunk_sourcetype_gws_groups_enterprise:
+  type: any
+  lib: custom
+  description: Splunk sourcetype for Google Workspace Reports API Groups Enterprise events
+  value: "'gws:reports:groups_enterprise'"
+  tags: google
+splunk_sourcetype_gws_groups_data_studio:
+  type: any
+  lib: custom
+  description: Splunk sourcetype for Google Workspace Reports API Groups Data Studio events
+  value: "'gws:reports:groups_data_studio'"
+  tags: google
