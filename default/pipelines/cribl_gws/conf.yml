@@ -162,7 +162,9 @@ functions:
     disabled: false
     groupId: KsiiV5
     description: Sets the index and sourcetype for Splunk output
-  - filter: 'true'
+  - id: eval
+    filter: 'true'
+    disabled: false
     conf:
       add: []
       keep:
@@ -174,8 +176,6 @@ functions:
         - sourcetype
       remove:
         - '*'
-    id: eval
-    disabled: false
     description: Sets the index and sourcetype for Splunk output
     groupId: KsiiV5
 description: >-
