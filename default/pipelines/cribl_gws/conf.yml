@@ -176,10 +176,7 @@ functions:
         - sourcetype
       remove:
         - '*'
-    description: Sets the index and sourcetype for Splunk output
+    description: Removes unnecessary fields
     groupId: KsiiV5
-description: >-
-  Pipeline for parsing, formatting and filtering Google Workspace Rest API
-  events.
-
-  events.
+description: Pipeline for parsing, formatting and filtering Google Workspace
+  Rest API events.
