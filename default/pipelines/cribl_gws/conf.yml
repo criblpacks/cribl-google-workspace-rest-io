@@ -160,8 +160,8 @@ functions:
           name: sourcetype
       keep: []
       remove: []
-    groupId: KsiiV5
     description: Sets the index and sourcetype for Splunk output
+    groupId: KsiiV5
   - id: eval
     filter: 'true'
     disabled: false
