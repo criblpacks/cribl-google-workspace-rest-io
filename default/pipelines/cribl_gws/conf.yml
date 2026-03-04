@@ -3,24 +3,27 @@ streamtags: []
 groups:
   SbRroP:
     name: Initial Parsing and Timestamping
-    description: Parses the JSON object so that we can start working with the
-      fields, sets _time to the correct value
+    description: >-
+      Parses the JSON object so that we can start working with the fields,
+      sets _time to the correct value
     index: 3
   SDNEgH:
     name: (Optional) Reduction Pipeline
-    description: Pass the events through the reduction pipelines to handle event reductions.
+    description: >-
+      Pass the events through the reduction pipelines to handle event
+      reductions.
     index: 4
     disabled: true
-  KsiiV5:
+  BRnjBm:
     name: Outputs
-    description: Select the output required, if nothing enabled standard JSON will be sent
+    description: >-
+      Select the output required, if nothing enabled standard JSON will be
+      sent
     index: 5
-    disabled: false
 asyncFuncTimeout: 1000
 functions:
   - id: comment
-    filter: "true"
-    disabled: null
+    filter: 'true'
     conf:
       comment: >-
         This conditioning pipeline is for use on the Google Workspace Rest
@@ -32,18 +35,14 @@ functions:
             1. Standard JSON that is formatted and timestamp normalized. 
             3. Splunk; The index value can be modified within the pipeline, however the default value is set in Knowledge > Variables. The sourcetype is set on each collector. Note: changing the sourcetype can affect how the data is handled by Splunk.
   - id: comment
-    filter: "true"
-    disabled: null
+    filter: 'true'
     conf:
-      comment: For additional details, see this pack's README under Settings.
-  - id: comment
-    filter: "true"
-    disabled: null
+      comment: 'For additional details, see this pack''s README under Settings.'
+  - filter: 'true'
     conf:
-      comment: "Author: Cribl Packs Team"
-  - id: serde
-    filter: "true"
-    disabled: false
+      comment: 'Author: Cribl Packs Team'
+    id: comment
+  - filter: 'true'
     conf:
       mode: extract
       type: json
@@ -51,25 +50,25 @@ functions:
       fieldFilterExpr: value !== '' && value !== null
       remove: []
       keep: []
+    id: serde
+    disabled: false
     description: Parse the JSON from _raw
     groupId: SbRroP
-  - id: eval
-    filter: "true"
-    disabled: false
+  - filter: 'true'
     conf:
       remove:
         - _raw
+    id: eval
+    disabled: false
     description: Remove intermediate fields
     groupId: SbRroP
-  - id: lookup
-    filter: "true"
-    disabled: false
+  - filter: 'true'
     conf:
       dbLookup: false
       matchMode: exact
       reloadPeriodSec: -1
       inFields:
-        - eventField: events[0].name
+        - eventField: 'events[0].name'
           lookupField: action
         - eventField: id.applicationName
           lookupField: event_type
@@ -80,11 +79,12 @@ functions:
           eventField: __event_action
           defaultValue: keep
       file: gws_events.csv
+    id: lookup
+    disabled: false
     groupId: SbRroP
     description: Appends the __event_action to the event
   - id: auto_timestamp
-    filter: "true"
-    disabled: null
+    filter: 'true'
     conf:
       srcField: id.time
       dstField: _time
@@ -94,47 +94,49 @@ functions:
       maxLen: 150
       defaultTime: now
       latestDateAllowed: +1week
-      earliestDateAllowed: -420weeks
+      earliestDateAllowed: '-420weeks'
     groupId: SbRroP
-  - id: chain
-    filter: "true"
-    disabled: true
+    disabled: false
+  - filter: 'true'
     conf:
       processor: cribl_gws_reductions
-    description: (Optional) Pass the events through the reduction pipelines to
-      handle event reductions.
+    id: chain
+    disabled: true
+    description: >-
+      (Optional) Pass the events through the reduction pipelines to handle
+      event reductions.
     groupId: SDNEgH
-  - id: comment
-    filter: "true"
-    disabled: false
+  - filter: 'true'
     conf:
       comment: Output to Splunk
-    groupId: KsiiV5
-  - id: serialize
-    filter: "true"
+    id: comment
     disabled: false
+    groupId: BRnjBm
+  - filter: 'true'
     conf:
       type: json
       dstField: _raw
       fields:
-        - "!_*"
-        - "!cribl*"
-        - "!source"
-        - "!host"
-        - "*"
-    groupId: KsiiV5
-    description: Serialize JSON to _raw
-  - id: eval
-    filter: "true"
+        - '!_*'
+        - '!cribl*'
+        - '!source'
+        - '!host'
+        - '!sourcetype'
+        - '!index'
+        - '*'
+    id: serialize
     disabled: false
+    groupId: BRnjBm
+    description: Serialize JSON to _raw
+  - filter: 'true'
     conf:
       add:
         - disabled: false
-          value: "index ? index : C.vars['default_splunk_index']"
+          value: 'index ? index : C.vars[''default_splunk_index'']'
           name: index
         - disabled: false
-          value: >-
-            sourcetype
+          value: |-
+            sourcetype=="gws:alerts"
               ? sourcetype
               : ({
                   admin:                     C.vars['splunk_sourcetype_gws_admin'],
@@ -156,6 +158,15 @@ functions:
                   data_studio:               C.vars['splunk_sourcetype_gws_data_studio']
                 }[id.applicationName] || C.vars['default_splunk_sourcetype'])
           name: sourcetype
+      keep: []
+      remove: []
+    id: eval
+    disabled: false
+    groupId: BRnjBm
+    description: Sets the index and sourcetype for Splunk output
+  - filter: 'true'
+    conf:
+      add: []
       keep:
         - _*
         - cribl*
@@ -164,8 +175,11 @@ functions:
         - index
         - sourcetype
       remove:
-        - "*"
-    groupId: KsiiV5
+        - '*'
+    id: eval
+    disabled: false
     description: Sets the index and sourcetype for Splunk output
-description: Pipeline for parsing, formatting and filtering Google Workspace
-  Rest API events.
+    groupId: BRnjBm
+description: >-
+  Pipeline for parsing, formatting and filtering Google Workspace Rest API
+  events.
